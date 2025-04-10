@@ -1,248 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SysCon Solutions | Expert Data Engineering Services</title>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --light: #ecf0f1;
-            --dark: #1a252f;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-        .logo span {
-            color: var(--secondary);
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 10rem 0 5rem;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #2980b9;
-        }
-        section {
-            padding: 5rem 0;
-        }
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary);
-        }
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .service-card {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        .service-card h3 {
-            color: var(--secondary);
-            margin-top: 0;
-        }
-        .about {
-            background: var(--light);
-        }
-        .contact {
-            background: var(--primary);
-            color: white;
-        }
-        .contact h2 {
-            color: white;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px;
-        }
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        .address {
-            margin-top: 1rem;
-            font-style: normal;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SysCon Solutions | Expert Data Engineering Services</title>
+  <style>
+    :root {
+      --primary: #ffcc00; /* Brighter header color */
+      --secondary: #3498db;
+      --light: #ecf0f1;
+      --dark: #1a252f;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: #333333;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .container {
+      width: 85%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333333;
+      text-decoration: none;
+    }
+    .logo span {
+      color: var(--secondary);
+    }
+    .nav-links a {
+      color: #333333;
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      color: white;
+      padding: 10rem 0 5rem;
+      text-align: center;
+      margin-top: 70px; /* to offset fixed header */
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #2980b9;
+    }
+    section {
+      padding: 5rem 0;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: var(--light);
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    .service-card h3 {
+      color: var(--secondary);
+      margin-top: 0;
+    }
+    .about {
+      background: var(--light);
+    }
+    .contact {
+      background: var(--primary);
+      color: #333333;
+    }
+    .contact h2 {
+      color: #333333;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    footer p {
+      margin: 0.5rem 0;
+    }
+    .address {
+      margin-top: 1rem;
+      font-style: normal;
+    }
+    /* Cookie popup styles */
+    .cookie-popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background-color: var(--light);
+      color: var(--dark);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cookie-popup p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .cookie-popup button {
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .cookie-popup button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+  <script>
+    function closeCookiePopup() {
+      document.querySelector('.cookie-popup').style.display = 'none';
+    }
+  </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">SysCon<span> Solutions</span></a>
-                <div class="nav-links">
-                    <a href="#services">Services</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">SysCon<span> Solutions</span></a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://syscon.solutions/privacy_notice">Privacy Notice</a>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Data Engineering Excellence</h1>
-            <p>SysCon Solutions delivers robust data infrastructure and pipelines that transform your business operations and analytics.</p>
-            <a href="#contact" class="btn">Get Started</a>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h1>Data Engineering Excellence</h1>
+      <p>SysCon Solutions delivers robust data infrastructure and pipelines that transform your business operations and analytics.</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+  </section>
 
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="service-card">
-                    <h3>Data Pipeline Development</h3>
-                    <p>Design and implement efficient ETL/ELT pipelines to move and transform your data reliably at scale.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Data Warehouse Solutions</h3>
-                    <p>Build modern data warehouses that serve as the single source of truth for your analytics needs.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Cloud Data Migration</h3>
-                    <p>Seamlessly migrate your data infrastructure to cloud platforms like AWS, GCP, or Azure.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Data Quality & Governance</h3>
-                    <p>Implement frameworks to ensure data accuracy, consistency, and security across your organization.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Real-time Data Processing</h3>
-                    <p>Build streaming solutions to process and analyze data in real-time for immediate insights.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Consulting & Training</h3>
-                    <p>Expert guidance and knowledge transfer to empower your team with data engineering best practices.</p>
-                </div>
-            </div>
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Data Pipeline Development</h3>
+          <p>Design and implement efficient ETL/ELT pipelines to move and transform your data reliably at scale.</p>
         </div>
-    </section>
+        <div class="service-card">
+          <h3>Data Warehouse Solutions</h3>
+          <p>Build modern data warehouses that serve as the single source of truth for your analytics needs.</p>
+        </div>
+        <div class="service-card">
+          <h3>Cloud Data Migration</h3>
+          <p>Seamlessly migrate your data infrastructure to cloud platforms like AWS, GCP, or Azure.</p>
+        </div>
+        <div class="service-card">
+          <h3>Data Quality & Governance</h3>
+          <p>Implement frameworks to ensure data accuracy, consistency, and security across your organization.</p>
+        </div>
+        <div class="service-card">
+          <h3>Real-time Data Processing</h3>
+          <p>Build streaming solutions to process and analyze data in real-time for immediate insights.</p>
+        </div>
+        <div class="service-card">
+          <h3>Consulting & Training</h3>
+          <p>Expert guidance and knowledge transfer to empower your team with data engineering best practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About SysCon Solutions</h2>
-            <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
-                Based in Elizabeth, NJ, SysCon Solutions is a specialized data engineering firm dedicated to building high-performance data systems. Our team combines deep technical expertise with business acumen to deliver solutions that drive measurable results. We take pride in architecting data infrastructure that scales with your business while maintaining reliability and security.
-            </p>
-        </div>
-    </section>
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About SysCon Solutions</h2>
+      <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+        Based in Elizabeth, NJ, SysCon Solutions is a specialized data engineering firm dedicated to building high-performance data systems. Our team combines deep technical expertise with business acumen to deliver solutions that drive measurable results. We take pride in architecting data infrastructure that scales with your business while maintaining reliability and security.
+      </p>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">How can we help?</label>
-                        <textarea id="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea id="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2017 SysCon Solutions. All rights reserved.</p>
-            <p>mohi@syscon.solutions | (689) 244-1139</p>
-            <p class="address">1080 E Grand St, Elizabeth, NJ 07201</p>
-        </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p>&copy; 2017 SysCon Solutions. All rights reserved.</p>
+      <p>info@syscon.solutions | (689) 244-1139</p>
+      <p class="address">1080 E Grand St, Elizabeth, NJ 07201</p>
+    </div>
+  </footer>
+
+  <!-- Cookie Popup -->
+  <div class="cookie-popup">
+    <p>
+      This website uses cookies to improve your experience. By using our site, you agree to our
+      <a href="https://syscon.solutions/privacy_notice" style="color: var(--secondary); text-decoration: underline;">cookie policy</a>.
+    </p>
+    <button onclick="closeCookiePopup()">Got It</button>
+  </div>
 </body>
 </html>
