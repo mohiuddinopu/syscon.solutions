@@ -279,24 +279,21 @@
       <h2>Get In Touch</h2>
       <div class="contact-form">
         <!-- The form uses mailto to open the user's default email client and send an email -->
-
-        <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="message">How can we help?</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-            <p id="formResponse" style="margin-top: 1rem; font-weight: bold;"></p>
-          </form>
-          
+        <form action="mailto:info@syscon.solutions" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
       </div>
     </div>
   </section>
@@ -317,42 +314,5 @@
     </p>
     <button onclick="closeCookiePopup()">Got It</button>
   </div>
-
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-  
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const responseEl = document.getElementById('formResponse');
-  
-      try {
-        const res = await fetch('https://3me16ft4q4.execute-api.us-east-1.amazonaws.com/default', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': 'NAww4wAeUqaqwxpjkT1cV7FFwzOZvqar4NtnyS9u'
-          },
-          body: JSON.stringify({ name, email, message })
-        });
-  
-        if (res.ok) {
-          responseEl.style.color = 'green';
-          responseEl.textContent = 'Message sent successfully!';
-          document.getElementById('contactForm').reset();
-        } else {
-          const errorText = await res.text();
-          throw new Error(errorText || 'Something went wrong. Please try again later.');
-        }
-      } catch (err) {
-        responseEl.style.color = 'red';
-        responseEl.textContent = err.message;
-      }
-    });
-  </script>
-    
-
-
 </body>
 </html>
