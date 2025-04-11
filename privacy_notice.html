@@ -6,24 +6,26 @@
   <title>Privacy and Data Security Notice | SysCon Solutions</title>
   <style>
     :root {
-      --primary: #ffcc00; /* Brighter header color */
+      --primary: #ffcc00;
       --secondary: #3498db;
       --light: #f8f9fa;
       --dark: #333333;
     }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: var(--light);
       line-height: 1.6;
     }
     header {
-      background-color: var(--primary);
+      background: var(--primary);
       color: var(--dark);
-      position: relative;
-      /* Additional padding added to accommodate both nav and header content */
-      padding: 10px 0 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 0;
     }
     .container {
       width: 85%;
@@ -34,6 +36,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
     .logo {
       font-size: 1.8rem;
@@ -44,20 +47,24 @@
     .logo span {
       color: var(--secondary);
     }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
     .nav-links a {
       color: var(--dark);
       text-decoration: none;
       margin-left: 2rem;
+      font-weight: 600;
       transition: color 0.3s;
-      font-weight: bold;
     }
     .nav-links a:hover {
       color: var(--secondary);
     }
-    /* Header content below the nav */
     .header-content {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 120px; /* Offset for fixed nav */
     }
     .header-content h1 {
       margin: 0;
@@ -68,9 +75,9 @@
       font-size: 1rem;
     }
     main {
-      padding: 20px;
+      padding: 2rem;
       max-width: 900px;
-      margin: 40px auto 20px;
+      margin: 2rem auto;
       background-color: #ffffff;
       border-radius: 5px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -84,36 +91,39 @@
     }
     footer {
       text-align: center;
-      padding: 10px;
-      background-color: #343a40;
+      padding: 2rem 0;
+      background-color: #1a252f;
       color: #ffffff;
-      margin-top: 20px;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
     a {
-      color: #007bff;
+      color: var(--secondary);
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    /* Add this at the end of your existing CSS */
+
+    /* Responsive Styles */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         align-items: flex-start;
       }
-
       .nav-links {
-        display: flex;
         flex-direction: column;
         margin-top: 1rem;
         width: 100%;
       }
-
       .nav-links a {
         margin: 0.5rem 0;
       }
-
       .logo {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
@@ -127,18 +137,21 @@
       <nav>
         <a href="https://syscon.solutions" class="logo">SysCon<span> Solutions</span></a>
         <div class="nav-links">
-          <a href="https://syscon.solutions">Home</a>
-          <a href="https://syscon.solutions/privacy_notice">Privacy Notice</a>
-          <a href="https://syscon.solutions/terms">Terms of Service</a>
-          <a href="https://syscon.solutions/contact">Contact</a>
+          <a href="https://syscon.solutions#hero">Home</a>
+          <a href="https://syscon.solutions#services">Services</a>
+          <a href="https://syscon.solutions#about">About</a>
+          <a href="https://syscon.solutions#contact">Contact</a>
+          <a href="https://syscon.solutions/privacy_notice" target="_blank" rel="noopener noreferrer">Privacy Notice</a>
+          <a href="https://syscon.solutions/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
         </div>
       </nav>
-      <div class="header-content">
-        <h1>Privacy and Data Security Notice</h1>
-        <p>Your Trust, Secured by SysCon Solutions</p>
-      </div>
+    </div>
+    <div class="header-content container">
+      <h1>Privacy and Data Security Notice</h1>
+      <p>Your Trust, Secured by SysCon Solutions</p>
     </div>
   </header>
+
   <main>
     <h2>Welcome to SysCon Solutions</h2>
     <p>
@@ -183,8 +196,9 @@
       <a href="https://syscon.solutions/privacy-policy">Privacy Policy</a>.
     </p>
   </main>
+
   <footer>
-    <p>© SysCon Solutions. All Rights Reserved. | <a href="https://syscon.solutions/terms">Terms of Service</a></p>
+    <p>&copy; SysCon Solutions. All Rights Reserved. | <a href="https://syscon.solutions/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a></p>
   </footer>
 </body>
 </html>
