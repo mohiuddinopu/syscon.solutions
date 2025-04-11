@@ -109,17 +109,30 @@
     a:hover {
       text-decoration: underline;
     }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
     .menu-toggle {
       display: block;
       font-size: 1.8rem;
       cursor: pointer;
       margin-left: auto;
       color: var(--dark);
+      background: none;
+      border: none;
     }
 
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 100%;
+        background-color: var(--primary);
+        padding: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
     .nav-links {
       display: none;
       flex-direction: column;
@@ -141,7 +154,7 @@
       flex-direction: column;
       align-items: flex-start;
     }
-    }
+    
   </style>
 </head>
 <body>
@@ -213,9 +226,9 @@
     <p>&copy; SysCon Solutions. All Rights Reserved. | <a href="https://syscon.solutions/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a></p>
   </footer>
   <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('show');
-    }
+    document.querySelector(".menu-toggle").addEventListener("click", function () {
+      document.querySelector(".nav-links").classList.toggle("show");
+    });
   </script>
 </body>
 </html>
