@@ -6,7 +6,7 @@
   <title>SysCon Solutions | Expert Data Engineering Services</title>
   <style>
     :root {
-      --primary: #ffcc00; /* Brighter header color */
+      --primary: #ffcc00;
       --secondary: #3498db;
       --light: #ecf0f1;
       --dark: #1a252f;
@@ -20,7 +20,6 @@
     }
     header {
       background: var(--primary);
-      color: #333333;
       padding: 1rem 0;
       position: fixed;
       width: 100%;
@@ -40,39 +39,44 @@
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #333333;
+      color: #333;
       text-decoration: none;
     }
     .logo span {
       color: var(--secondary);
     }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
     .nav-links a {
-      color: #333333;
+      color: #333;
       text-decoration: none;
-      margin-left: 2rem;
       transition: color 0.3s;
     }
     .nav-links a:hover {
       color: var(--secondary);
     }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
     .hero {
       background: linear-gradient(135deg, var(--primary), var(--dark));
       color: white;
       padding: 10rem 0 5rem;
       text-align: center;
-      margin-top: 70px; /* offset for the fixed header */
+      scroll-margin-top: 100px;
     }
+
     .hero h1 {
       font-size: 3rem;
-      margin-bottom: 1rem;
     }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
+
     .btn {
-      display: inline-block;
       background: var(--secondary);
       color: white;
       padding: 0.8rem 1.8rem;
@@ -81,58 +85,58 @@
       font-weight: 600;
       transition: background 0.3s;
     }
+
     .btn:hover {
       background: #2980b9;
     }
+
     section {
       padding: 5rem 0;
+      scroll-margin-top: 100px;
     }
+
     h2 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 3rem;
       color: var(--primary);
     }
+
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
+
     .service-card {
       background: var(--light);
       padding: 2rem;
       border-radius: 5px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
     }
-    .service-card:hover {
-      transform: translateY(-10px);
-    }
+
     .service-card h3 {
       color: var(--secondary);
-      margin-top: 0;
     }
+
     .about {
       background: var(--light);
     }
+
     .contact {
       background: var(--primary);
-      color: #333333;
+      color: #333;
     }
-    .contact h2 {
-      color: #333333;
-    }
+
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
     }
+
     .form-group {
       margin-bottom: 1.5rem;
     }
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+
     .form-group input,
     .form-group textarea {
       width: 100%;
@@ -140,20 +144,14 @@
       border: none;
       border-radius: 5px;
     }
+
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
       padding: 2rem 0;
     }
-    footer p {
-      margin: 0.5rem 0;
-    }
-    .address {
-      margin-top: 1rem;
-      font-style: normal;
-    }
-    /* Cookie popup styles */
+
     .cookie-popup {
       position: fixed;
       bottom: 20px;
@@ -169,10 +167,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .cookie-popup p {
-      margin: 0;
-      font-size: 1rem;
-    }
+
     .cookie-popup button {
       background-color: var(--secondary);
       color: white;
@@ -182,61 +177,57 @@
       cursor: pointer;
       font-weight: bold;
     }
+
     .cookie-popup button:hover {
       background-color: #2980b9;
     }
-    /* Add this at the end of your existing CSS */
+
     @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+      .menu-toggle {
+        display: block;
+      }
 
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      margin-top: 1rem;
-      width: 100%;
-    }
+      .nav-links {
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 1rem;
+      }
 
-    .nav-links a {
-      margin: 0.5rem 0;
-    }
+      .nav-links.show {
+        display: flex;
+      }
 
-    .logo {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      .nav-links a {
+        margin: 0.5rem 0;
+      }
     }
-}
   </style>
-  <script>
-    function closeCookiePopup() {
-      document.querySelector('.cookie-popup').style.display = 'none';
-    }
-  </script>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <a href="https://syscon.solutions" class="logo">SysCon<span> Solutions</span></a>
-        <div class="nav-links">
-          <a href="https://syscon.solutions">Home</a>
-          <a href="https://syscon.solutions/privacy_notice">Privacy Notice</a>
-          <a href="https://syscon.solutions/terms">Terms of Service</a>
-          <a href="https://syscon.solutions/contact">Contact</a>
+        <a href="#" class="logo">SysCon<span> Solutions</span></a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+          <a href="#hero">Home</a>
+          <a href="#privacy">Privacy Notice</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="container">
       <h1>Data Engineering Excellence</h1>
-      <p>
-        SysCon Solutions delivers robust data infrastructure and pipelines that transform your business
-        operations and analytics.
-      </p>
+      <p>SysCon Solutions delivers robust data infrastructure and pipelines that transform your business operations and analytics.</p>
       <a href="#contact" class="btn">Get Started</a>
     </div>
   </section>
@@ -247,39 +238,27 @@
       <div class="services">
         <div class="service-card">
           <h3>Data Pipeline Development</h3>
-          <p>
-            Design and implement efficient ETL/ELT pipelines to move and transform your data reliably at scale.
-          </p>
+          <p>Design and implement efficient ETL/ELT pipelines to move and transform your data reliably at scale.</p>
         </div>
         <div class="service-card">
           <h3>Data Warehouse Solutions</h3>
-          <p>
-            Build modern data warehouses that serve as the single source of truth for your analytics needs.
-          </p>
+          <p>Build modern data warehouses that serve as the single source of truth for your analytics needs.</p>
         </div>
         <div class="service-card">
           <h3>Cloud Data Migration</h3>
-          <p>
-            Seamlessly migrate your data infrastructure to cloud platforms like AWS, GCP, or Azure.
-          </p>
+          <p>Seamlessly migrate your data infrastructure to cloud platforms like AWS, GCP, or Azure.</p>
         </div>
         <div class="service-card">
           <h3>Data Quality & Governance</h3>
-          <p>
-            Implement frameworks to ensure data accuracy, consistency, and security across your organization.
-          </p>
+          <p>Implement frameworks to ensure data accuracy, consistency, and security across your organization.</p>
         </div>
         <div class="service-card">
           <h3>Real-time Data Processing</h3>
-          <p>
-            Build streaming solutions to process and analyze data in real-time for immediate insights.
-          </p>
+          <p>Build streaming solutions to process and analyze data in real-time for immediate insights.</p>
         </div>
         <div class="service-card">
           <h3>Consulting & Training</h3>
-          <p>
-            Expert guidance and knowledge transfer to empower your team with data engineering best practices.
-          </p>
+          <p>Expert guidance and knowledge transfer to empower your team with data engineering best practices.</p>
         </div>
       </div>
     </div>
@@ -289,10 +268,7 @@
     <div class="container">
       <h2>About SysCon Solutions</h2>
       <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
-        Based in Elizabeth, NJ, SysCon Solutions is a specialized data engineering firm dedicated to building
-        high-performance data systems. Our team combines deep technical expertise with business acumen to deliver
-        solutions that drive measurable results. We take pride in architecting data infrastructure that scales with your
-        business while maintaining reliability and security.
+        Based in Elizabeth, NJ, SysCon Solutions is a specialized data engineering firm dedicated to building high-performance data systems.
       </p>
     </div>
   </section>
@@ -301,25 +277,22 @@
     <div class="container">
       <h2>Get In Touch</h2>
       <div class="contact-form">
-        <!-- The form uses mailto to open the user's default email client and send an email -->
-
         <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="message">How can we help?</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-            <p id="formResponse" style="margin-top: 1rem; font-weight: bold;"></p>
-          </form>
-          
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+          <p id="formResponse" style="margin-top: 1rem;"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -332,24 +305,30 @@
     </div>
   </footer>
 
-  <!-- Cookie Popup -->
   <div class="cookie-popup">
     <p>
       This website uses cookies to improve your experience. By using our site, you agree to our
-      <a href="https://syscon.solutions/privacy_notice" style="color: var(--secondary); text-decoration: underline;">cookie policy</a>.
+      <a href="#privacy" style="color: var(--secondary); text-decoration: underline;">cookie policy</a>.
     </p>
     <button onclick="closeCookiePopup()">Got It</button>
   </div>
 
   <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    function closeCookiePopup() {
+      document.querySelector('.cookie-popup').style.display = 'none';
+    }
+
     document.getElementById('contactForm').addEventListener('submit', async function (e) {
       e.preventDefault();
-  
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
       const responseEl = document.getElementById('formResponse');
-  
+
       try {
         const res = await fetch('https://3me16ft4q4.execute-api.us-east-1.amazonaws.com/default', {
           method: 'POST',
@@ -359,14 +338,13 @@
           },
           body: JSON.stringify({ name, email, message })
         });
-  
+
         if (res.ok) {
           responseEl.style.color = 'green';
           responseEl.textContent = 'Message sent successfully!';
           document.getElementById('contactForm').reset();
         } else {
-          const errorText = await res.text();
-          throw new Error(errorText || 'Something went wrong. Please try again later.');
+          throw new Error('Something went wrong.');
         }
       } catch (err) {
         responseEl.style.color = 'red';
@@ -374,8 +352,5 @@
       }
     });
   </script>
-    
-
-
 </body>
 </html>
