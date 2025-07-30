@@ -6,25 +6,30 @@
   <title>SysCon Solutions | Expert Data Engineering Services</title>
   <style>
     :root {
-      --primary: #ffcc00;
-      --secondary: #3498db;
-      --light: #ecf0f1;
-      --dark: #1a252f;
+      --primary: #4a47a3;        /* Deep Indigo */
+      --secondary: #00796b;      /* Dark Teal */
+      --accent: #e57373;         /* Muted Coral (replacing soft gold) */
+      --light: #2a2a2a;          /* Dark Gray */
+      --dark: #1a1a2e;           /* Darker Navy */
+      --text: #e0e0e0;           /* Light Gray for text */
+      --services-heading: #4db6ac; /* Soft Teal for Our Services */
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      color: var(--dark);
+      color: var(--text);
+      background: var(--light);
       line-height: 1.6;
     }
     header {
-      background: var(--primary);
+      background: linear-gradient(90deg, #3a3a7d 60%, #005a50 100%);
       padding: 1rem 0;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .container {
       width: 85%;
@@ -39,157 +44,199 @@
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #333;
+      color: var(--text);
       text-decoration: none;
+      letter-spacing: 1px;
     }
     .logo span {
-      color: var(--secondary);
+      color: var(--accent);
     }
     .nav-links {
       display: flex;
       gap: 2rem;
     }
     .nav-links a {
-      color: #333;
+      color: var(--text);
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.3s;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
     }
     .nav-links a:hover {
-      color: var(--secondary);
+      color: var(--accent);
+      background: rgba(0,0,0,0.2);
     }
-
     .menu-toggle {
       display: none;
       font-size: 1.8rem;
       cursor: pointer;
+      color: var(--accent);
     }
-
     .hero {
-      background: linear-gradient(135deg, var(--primary), var(--dark));
-      color: white;
+      background: linear-gradient(135deg, #2e2e6b 60%, #004d40 100%);
+      color: var(--text);
       padding: 10rem 0 5rem;
       text-align: center;
       scroll-margin-top: 100px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
     }
-
     .hero h1 {
       font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
     }
-
     .btn {
-      background: var(--secondary);
-      color: white;
+      background: var(--accent);
+      color: var(--dark);
       padding: 0.8rem 1.8rem;
       border-radius: 5px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-
     .btn:hover {
-      background: #2980b9;
+      background: var(--secondary);
+      color: var(--text);
     }
-
     section {
       padding: 5rem 0;
       scroll-margin-top: 100px;
     }
-
     h2 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 3rem;
-      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 1px;
     }
-
+    #services h2 {
+      color: var(--services-heading);
+    }
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
-
     .service-card {
-      background: var(--light);
+      background: var(--dark);
       padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border-left: 6px solid var(--secondary);
+      transition: box-shadow 0.3s, border-color 0.3s;
     }
-
+    .service-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      border-left: 6px solid var(--accent);
+    }
     .service-card h3 {
       color: var(--secondary);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
     }
-
     .about {
       background: var(--light);
     }
-
     .contact {
-      background: var(--primary);
-      color: #333;
+      background: var(--dark);
+      color: var(--text);
     }
-
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
+      background: var(--light);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
     }
-
     .form-group {
       margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
     }
-
+    .form-group label {
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
     .form-group input,
     .form-group textarea {
       width: 100%;
       padding: 0.8rem;
-      border: none;
+      border: 1px solid var(--primary);
       border-radius: 5px;
+      background: var(--light);
+      color: var(--text);
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      box-sizing: border-box;
     }
-
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--secondary);
+      outline: none;
+    }
+    .contact-form .btn {
+      align-self: center;
+      width: fit-content;
+    }
     footer {
       background: var(--dark);
-      color: white;
+      color: var(--text);
       text-align: center;
       padding: 2rem 0;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
     }
-
     .cookie-popup {
       position: fixed;
       bottom: 20px;
       left: 20px;
       right: 20px;
-      background-color: var(--light);
-      color: var(--dark);
+      background-color: var(--secondary);
+      color: var(--text);
       padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 1rem;
     }
-
+    .cookie-popup a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
     .cookie-popup button {
-      background-color: var(--secondary);
-      color: white;
+      background-color: var(--accent);
+      color: var(--dark);
       border: none;
       padding: 0.8rem 1.2rem;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.3s, color 0.3s;
     }
-
     .cookie-popup button:hover {
-      background-color: #2980b9;
+      background-color: var(--primary);
+      color: var(--text);
     }
-
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
-
       .nav-links {
         flex-direction: column;
-        background: var(--primary);
+        background: #3a3a7d;
         position: absolute;
         top: 70px;
         left: 0;
@@ -197,13 +244,15 @@
         display: none;
         padding: 1rem;
       }
-
       .nav-links.show {
         display: flex;
       }
-
       .nav-links a {
         margin: 0.5rem 0;
+        color: var(--text);
+      }
+      .contact-form {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -293,7 +342,7 @@
             <textarea id="message" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn">Send Message</button>
-          <p id="formResponse" style="margin-top: 1rem;"></p>
+          <p id="formResponse" style="margin-top: 1rem; text-align: center;"></p>
         </form>
       </div>
     </div>
@@ -310,7 +359,7 @@
   <div class="cookie-popup">
     <p>
       This website uses cookies to improve your experience. By using our site, you agree to our
-      <a href="#privacy" style="color: var(--secondary); text-decoration: underline;">cookie policy</a>.
+      <a href="#privacy">cookie policy</a>.
     </p>
     <button onclick="closeCookiePopup()">Got It</button>
   </div>

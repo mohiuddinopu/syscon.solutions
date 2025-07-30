@@ -1,139 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy and Data Security Notice | SysCon Solutions</title>
-  <style>
-    :root {
-      --primary: #eddfa8; /* Brighter header color */
-      --secondary: #99d0f4;
-      --light: #f8f9fa;
-      --dark: #333333;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--light);
-      line-height: 1.6;
-    }
-    header {
-      background: var(--primary);
-      color: var(--dark);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      padding: 1rem 0;
-    }
-    .container {
-      width: 85%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--dark);
-      text-decoration: none;
-    }
-    .logo span {
-      color: var(--secondary);
-    }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .nav-links a {
-      color: var(--dark);
-      text-decoration: none;
-      margin-left: 2rem;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover {
-      color: var(--secondary);
-    }
-    .header-content {
-      text-align: center;
-      margin-top: 80px; /* Offset for fixed nav */
-    }
-    .header-content h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    .header-content p {
-      margin: 5px 0 0;
-      font-size: 1rem;
-    }
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: 2rem auto;
-      background-color: #ffffff;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding-top: 120px; /* Creates space below the fixed header */
-    }
-    h1, h2 {
-      color: var(--dark);
-      text-align: center;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      background-color: #1a252f;
-      color: #ffffff;
-    }
-    footer a {
-      color: #ffcc00;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    a {
-      color: #66a7ed;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .menu-toggle {
-      display: block;
-      font-size: 1.8rem;
-      cursor: pointer;
-      margin-left: auto;
-      color: var(--dark);
-      background: none;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        margin-top: 1rem;
-        width: 100%;
-        background-color: var(--primary);
-        padding: 1rem;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-    }
+<style>
+  :root {
+    --primary: #f0e6f6;      /* Soft lavender header background */
+    --secondary: #7c3aed;    /* Vibrant purple accent color */
+    --light: #f9fafb;        /* Gentle off-white page background */
+    --dark: #2d2a32;         /* Rich dark text color */
+    --footer-bg: #4b3f72;    /* Deep purple footer */
+    --footer-link: #ffd166;  /* Warm yellow footer link */
+    --link: #7c3aed;         /* Accent purple for links */
+    --shadow: rgba(124, 58, 237, 0.08); /* Soft purple shadow */
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+    line-height: 1.6;
+  }
+  header {
+    background: var(--primary);
+    color: var(--dark);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+  }
+  .container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .logo span {
+    color: var(--secondary);
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    background-color: var(--primary);
+    padding: 1rem;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links a {
+    color: var(--dark);
+    text-decoration: none;
+    margin: 0.5rem 0;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover {
+    color: var(--secondary);
+  }
+  .header-content {
+    text-align: center;
+    margin-top: 80px;
+  }
+  .header-content h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--secondary);
+  }
+  .header-content p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: var(--dark);
+  }
+  main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px var(--shadow);
+    padding-top: 120px;
+  }
+  h1, h2 {
+    color: var(--secondary);
+    text-align: center;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--footer-bg);
+    color: #fff;
+  }
+  footer a {
+    color: var(--footer-link);
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: auto;
+    color: var(--dark);
+    background: none;
+    border: none;
+  }
+  @media (max-width: 768px) {
     .nav-links {
       display: none;
       flex-direction: column;
@@ -142,94 +136,8 @@
       background-color: var(--primary);
       padding: 1rem;
     }
-
     .nav-links.show {
       display: flex;
     }
-
-    .nav-links a {
-      margin: 0.5rem 0;
-    }
-
-    nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="https://syscon.solutions" class="logo">SysCon<span> Solutions</span></a>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="nav-links" id="navLinks">
-          <a href="https://syscon.solutions">Home</a>
-          <a href="https://syscon.solutions/privacy_notice">Privacy Notice</a>
-          <a href="https://syscon.solutions/terms">Terms of Service</a>
-          <a href="https://syscon.solutions/contact">Contact</a>
-        </div>
-      </nav>
-    </div>
-    <div class="header-content container">
-      <h1>Privacy and Data Security Notice</h1>
-      <p>Your Trust, Secured by SysCon Solutions</p>
-    </div>
-  </header>
-
-  <main>
-    <h2>Welcome to SysCon Solutions</h2>
-    <p>
-      We understand the importance of protecting your personal data in today’s digital world.
-      That’s why at SysCon Solutions, we’ve made privacy and security our top priorities.
-      This notice outlines the principles and practices we follow to safeguard your information and respect your privacy.
-    </p>
-
-    <h2>Our Commitment to Your Privacy</h2>
-    <p>
-      Our commitment extends beyond meeting compliance standards.
-      We actively work to stay ahead of potential threats and adapt to evolving technologies to protect your data and honor your trust in us.
-    </p>
-
-    <h2>How We Protect Your Data</h2>
-    <ul>
-      <li><strong>Data Encryption:</strong> Advanced encryption technologies secure your data during storage and transmission.</li>
-      <li><strong>Access Controls:</strong> Strict role-based access to systems and data.</li>
-      <li><strong>Regular Security Assessments:</strong> Continuous audits and vulnerability scans.</li>
-      <li><strong>Secure Infrastructure:</strong> Collaborating with reliable service providers and maintaining robust systems.</li>
-      <li><strong>Incident Management:</strong> A team dedicated to addressing security concerns swiftly and effectively.</li>
-    </ul>
-
-    <h2>Your Privacy Rights</h2>
-    <p>
-      SysCon Solutions believes in empowering you with control over your personal information.
-      You have the right to:
-    </p>
-    <ul>
-      <li>Access and review the personal data we’ve collected about you.</li>
-      <li>Request corrections to ensure data accuracy.</li>
-      <li>Opt out of unnecessary data collection practices.</li>
-      <li>Request data deletion when permissible by law.</li>
-    </ul>
-    <p>
-      To exercise your rights, contact <a href="mailto:privacy@syscon.solutions">privacy@syscon.solutions</a>.
-    </p>
-
-    <h2>Transparency and Accountability</h2>
-    <p>
-      We are committed to transparency. For more information, visit our full
-      <a href="https://syscon.solutions/privacy-policy">Privacy Policy</a>.
-    </p>
-  </main>
-
-  <footer>
-    <p>&copy; SysCon Solutions. All Rights Reserved. | <a href="https://syscon.solutions/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a></p>
-  </footer>
-  <script>
-    document.querySelector(".menu-toggle").addEventListener("click", function () {
-      document.querySelector(".nav-links").classList.toggle("show");
-    });
-  </script>
-</body>
-</html>
+  }
+</style>
